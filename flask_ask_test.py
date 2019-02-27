@@ -11,8 +11,10 @@ def start():
 
 
 @ask.intent('HelloIntent')
-def hello(firstname):
-    return statement("Bonjour {}".format(firstname))
+def bonjour(nom):
+    if nom is None:
+        return statement('Je ne connais pas ce nom, désolé')
+    return statement("Bonjour {}".format(nom))
 
 
 if __name__ == '__main__':
